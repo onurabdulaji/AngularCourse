@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  input,
+  Output,
+  output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-user',
