@@ -9,5 +9,33 @@ import { TaskComponent } from './task/task.component';
   styleUrl: './tasks.component.css',
 })
 export class TasksComponent {
-  @Input() name?: string;
+  @Input({ required: true }) name!: string;
+  @Input({ required: true }) userid!: string;
+  tasks = [
+    {
+      id: 't1',
+      userId: 'u1',
+      title: 'Master Angular',
+      summary: 'Learn the basics of Angular and build a simple application.',
+      dueDate: '2023-10-01',
+    },
+    {
+      id: 't2',
+      userId: 'u3',
+      title: 'Master Angular',
+      summary: 'Learn the basics of Angular and build a simple application.',
+      dueDate: '2023-10-01',
+    },
+    {
+      id: 't3',
+      userId: 'u3',
+      title: 'Master Angular',
+      summary: 'Learn the basics of Angular and build a simple application.',
+      dueDate: '2023-10-01',
+    },
+  ];
+
+  get selectedUserTasks() {
+    return this.tasks.filter((task) => task.userId === this.userid);
+  }
 }
